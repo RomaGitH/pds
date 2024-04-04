@@ -23,15 +23,16 @@ ti = 0;
 tf = 200;
 fm = 5;
 #Ergocidad
-for i=1:5
-  [x, y] = aleatoria(ti, i*tf, fm, 1);
-  subplot(3,5,i);
-  plot(x,y);
-  subplot(3,5,i+5);
-  media = sum(y)/length(y)
-  plot(x,media);
-endfor
 
+xi = zeros(10,1);
+media = zeros(10,1);
+
+for i=1:10
+  [x, y] = aleatoria(ti, i*tf, fm, 1);
+  xi(i) = i*tf;
+  media(i) = sum(y)/length(y);
+endfor
+plot(xi,media);
 %{
 figure(2);
 w = mediaergo(y);
