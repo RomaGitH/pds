@@ -9,4 +9,6 @@ function [y] = media(x);
      y(i) = y(i)/r;
   endfor
 
+  endfunction
+
 

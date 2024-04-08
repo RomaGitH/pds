@@ -8,4 +8,5 @@ function [w] = varianza(x,y);
         endfor
       w(i) = w(i)/(r-1);
   endfor
+  endfunction
 
