@@ -6,5 +6,5 @@ function [y] = potencia(x)
     y += x(i)^2;
   endfor
 
-  y = y/N;
+  y = y/(2*N);
   endfunction
