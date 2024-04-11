@@ -2,7 +2,7 @@ ti = 0;
 tf = 2;
 fm = 40;
 fs = 1;
-phs =1;
+phs = 0;
 
 [x1, y1]  =  seno(ti, tf, fm, fs, phs);
 [x2, y2] = aleatoria(ti, tf, fm, 1);
@@ -36,7 +36,7 @@ SNR = ps/pr;
 disp(['Relacion Señal Ruido SNR =', num2str(SNR)]);
 
 #por def de potencia si pot(y) = pr
-#                       pot(y) = c^2 pr
+#                       pot(cy) = c^2 pr
 #                       -> si SNR = ps/pr
 #                             SNR/c^2 = ps/(pr * c^2)
 #                             si c = sqrt(SNR)

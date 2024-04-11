@@ -6,4 +6,5 @@ for i=1:6
   figure(i)
   [x,y]=seno(ti,tf,fm(i),fs,0);
   plot(x,y);
+  title(['fs = 5 hz, fm = ', num2str(fm(i)), ' hz']);
 endfor

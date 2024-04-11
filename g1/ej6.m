@@ -10,14 +10,14 @@ stem(x,y);
 
 
 figure(2);
-[x,y] = iescalon(ti,tf,fm,fs,phs);
+[x,y] = interpolar(ti,tf,fm,fs,phs,@escalon);
 stem(x,y);
 
 figure(3);
-[x,y] = ilineal(ti,tf,fm,fs,phs);
+[x,y] = interpolar(ti,tf,fm,fs,phs,@lineal);
 stem(x,y);
 
 figure(4);
-[x,y] = isinc(ti,tf,fm,fs,phs);
+[x,y] = interpolar(ti,tf,fm,fs,phs,@sinc2);
 stem(x,y);
 
