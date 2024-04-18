@@ -1,7 +1,7 @@
 ti = 0;
 tf = 1;
 fm = 100;
-fs = 2;
+fs = 4;
 phs = 0;
 
 figure(4);
