@@ -2,31 +2,41 @@ ti = 0;
 tf = 2;
 fm = 50;
 fs = 2;
-phi = 1;
+phi = 0;
 
 
-[x1,y1] = seno(ti,tf,fm,fs,phi);
+[~,y1] = seno(ti,tf,fm,fs,phi);
 
-5
-#...
-a = 1; #Amplitud
-b = 1;  #Frecuencia
-c = 2*pi+1;  #Fase
-
-[x2,y2] = seno(ti,tf,fm,b*fs,c*phi);
-y2 = a.*y2;
-
-punto = 0;
- for i=1:length(y1)
-   punto += y1(i)*y2(i);
- endfor
-
-
+#Amplitud
+for i=1:100
+   y2 = i.*y1;
+   P(i) = y1*y2';
+endfor
 
 figure(1);
-subplot(2,1,1);
-stem(x1,y1);
-subplot(2,1,2);
-stem(x2,y2);
-title(['Producto punto = ', num2str(punto)]);
+plot(i=1:100,P);
+title('Amplitud');
+
+#Frecuencia
+for i=1:100
+   [~,y2] = seno(ti,tf,fm,fs+i,phi);
+   Q(i) = y1*y2';
+endfor
+
+figure(2);
+stem(i=1:100,Q);
+title('Frecuencia');
+
+#Fase
+for i=1:100
+   [~,y2] = seno(ti,tf,fm,fs,phi+(i-1)*pi/20);
+   R(i) = y1*y2';
+endfor
+
+figure(3);
+plot(i=1:100,R);
+title('Fase');
+
+
+
 
