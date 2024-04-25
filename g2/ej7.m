@@ -5,23 +5,23 @@ N = 20;
 ha = sin(8*0:N-1);
 #ha = 2^0:N-1
 
-w = impulso(ha,x,N);
+w = convolucion(ha,x);
 
 hb = 0.5^0:N-1;
 
-y = impulso(hb, w, N);
+y = convolucion(hb, w);
 
 figure(1);
-stem(0:N-1, y);
+stem(0:length(y)-1, y);
 title('Sistema original');
 
 #inversion;
 
-y = impulso(hb,x,N);
+y = convolucion(hb,x);
 
-w = impulso(ha,y,N);
+w = convolucion(ha,y);
 
 
 figure(2);
-stem(0:N-1, w);
+stem(0:length(w)-1, w);
 title('Sistema invertido');
