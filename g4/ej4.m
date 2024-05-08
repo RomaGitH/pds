@@ -12,7 +12,7 @@ for i =1:80
 
   [~,z] = seno(ti,tf,fm,2,0);
 
-  ##y = y.*abs(z);
+  y = y.*abs(z);
   Y = abs(fft(y,length(y)));
 
   df=fm/length(t);

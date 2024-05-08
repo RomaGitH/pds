@@ -1,8 +1,8 @@
 ## generacion de s[t]
 f1=10;
 f2=20;
-tm=0.001;
-fm=1/tm;
+fm=1000 + 3;
+tm = 1/fm;
 ti=0;
 tf=1;
 t=ti:tm:tf-tm;
@@ -13,7 +13,7 @@ S = abs(fft(s, length(s)));
 df=fm/length(t);
 k=-fm/2:df:fm/2;
 
-mitad = (length(S)/2) + 1;
+mitad = ceil((length(S)/2) + 1);
 
 
 figure(1)
@@ -51,6 +51,9 @@ title('Espectro de Magnitud');
 ylabel('|S|');
 xlabel('f');
 
+E1 = s*s'
+E2 = (1/length(S))*S*S'
+
 # 2- f2 = 20 hz-> f2 = 11hz;
 
 s=sin(2*pi*f1*t) + 4*sin(2*pi*11*t);
@@ -85,6 +88,9 @@ title('Espectro de Magnitud');
 ylabel('|S|');
 xlabel('f');
 
+E1 = s*s'
+E2 = (1/length(S))*S*S'
+
 # 4- t =[0s, 2s)
 
 ti=0;
@@ -94,7 +100,7 @@ s=sin(2*pi*f1*t) + 4*sin(2*pi*f2*t);
 S = abs(fft(s, length(s)));
 df=fm/length(t);
 k=-fm/2:df:fm/2;
-mitad = (length(S)/2) + 1;
+mitad = ceil((length(S)/2) + 1);
 
 
 
@@ -109,4 +115,7 @@ stem(k, [S(mitad:end), S(1:mitad)] );
 title('Espectro de Magnitud');
 ylabel('|S|');
 xlabel('f');
+E1 = s*s'
+E2 = (1/length(S))*S*S'
+
 
