@@ -12,5 +12,6 @@ roots(b)
 ##stem(w,Hz);
 
 figure(3);
-i = conv(a(2:end),[b 0]); #respuesta al impulso...
+##i = conv(a(2:end),[b]); #respuesta al impulso...
+##i = filter(a(2:end),b,[1 0 0 0 0 0 0 0 0]);
 stem(0:length(i)-1,i);

@@ -12,13 +12,13 @@ for i =1:80
 
   [~,z] = seno(ti,tf,fm,2,0);
 
-  y = y.*abs(z);
+  y = y.*z;
   Y = abs(fft(y,length(y)));
 
   df=fm/length(t);
 
   k=-fm/2:df:fm/2;
-  mitad = length(Y)/2-1;
+  mitad = ceil(length(Y)/2+1);
 
   subplot(1,2,1);
   stem(t,y);

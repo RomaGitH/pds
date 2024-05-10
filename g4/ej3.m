@@ -7,7 +7,7 @@ phs = 0;
 [t,y] = seno(ti,tf,fm,fs,phs);
 
 j=0;
-  while j != 125
+  while j != 25
 
   Y = fft(y, length(y));
   N = length(Y);

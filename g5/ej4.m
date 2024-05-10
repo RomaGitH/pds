@@ -7,10 +7,11 @@ w = 0:50:10000;
 H = abs(Hs(w*1i));
 subplot(3,1,1);
 stem(w,H);
+title('H(s)');
 
-[m, maxp] = max(H);
-
-target =  m * exp(-3/10);
+[m, maxp] = max(H)
+##target =  m * 10^(-3/10)
+target =  0.15;
 s = length(H);
 f0 = 0;
 for i=maxp:s
@@ -20,12 +21,14 @@ for i=maxp:s
     endif
 endfor
 
-fT = 4*f0;
+fT = f0*4;
 wz = 0:0.01:pi;
-K1 = abs(Hz1(wz.*1i,48/fT)); #...
+K1 = abs(Hz1(exp(wz.*1i),1/fT)); #...
 subplot(3,1,2);
 stem(wz,K1);
-K2 = abs(Hz2(wz.*1i,1/fT)); #...
+title('H1(z) euler');
+K2 = abs(Hz2(exp(wz.*1i),1/fT)); #...
 subplot(3,1,3);
 stem(wz,K2);
+title('H2(z) bilineal');
 

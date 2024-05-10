@@ -1,6 +1,6 @@
 fm = 100;
 ti = 0;
-tf = 2.2;
+tf = 1;
 phs = 0;
 
 [t,seno4] = seno(ti, tf, fm, 4, phs);
