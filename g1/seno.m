@@ -4,4 +4,4 @@ function [x,y] = seno(ti, tf, fm, fs, phs)
   x=2*pi*fs*t + phs;
   y=sin(x);
 endfunction
-
+##TESTING

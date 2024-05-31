@@ -1,0 +1,21 @@
+Cheng 2012...
+full time domain
+Intro:
+	pitch quantization system which can produce pitch corrected, pitch shifted and or reharmonized;
+Requirements:
+Design:
+	The system divides input audio into three nonoverlapping blocks of L=1024(256) samples at 44.1 kHz
+(8kHz), producing an ideal latency of one frame, or 23.2ms
+(32ms).
+	Autocorrelation (qué metodos) to find pitch period pp
+	The quantization block chooses a new pitch period pp’ from a lookup table comprised of pitch periods corresponding to the notes of a specific musical scale
+	PSOLA
+Enhancements:
+Enhancements psola resynthesis: grains(ruido)?
+Enhancements transient(energy bursts/ruido/artefacto): zero crosing...por frame: si cruza mucha veces ceros entonces no corrige el pitch de ese frame;
+Pitch period quantizer: tabla de pitches;
+Ejemplo:
+shit: -glutteral souns
+      -high female singers at low sample rate 
+      -not fully automatic pitch quantization
+      -cross platform not so efficient
